@@ -86,7 +86,6 @@ class Home extends Component {
                             horizontal
                             style={{ margin: '3em 0em', textTransform: 'uppercase' }}
                             >
-                            <a href='#'>Case Studies</a>
                             </Divider>
 
                             <Header as='h3' style={{ fontSize: '2em' }}>

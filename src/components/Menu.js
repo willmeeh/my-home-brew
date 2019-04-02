@@ -4,17 +4,29 @@ import {
   Menu,
   Dropdown
 } from 'semantic-ui-react'
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 class MyHomeBrewMenu extends Component {
 
-    createLink(text, route) {
-        const linkStyle = {
-            textDecoration: 'none', 
-            color: 'black'
-        };
+    itemIsActive(route) {
+        const { pathname } = this.props.location;
+        return route === pathname;
+    }
 
+    subMenuIsActive(route) {
+        const { pathname } = this.props.location;
+        return pathname.includes(route);
+    }
+
+    createItem(baseComponent, text, route) {
+        const { Item } = baseComponent;
         return (
-            <Link style={linkStyle} to={route}>{text}</Link>
+            <Item 
+                as={Link} 
+                to={route}
+                active={this.itemIsActive(route)}
+            >
+                {text}
+            </Item>
         );
     }
 
@@ -25,22 +37,19 @@ class MyHomeBrewMenu extends Component {
             <Menu
                 fixed={fixed ? 'top' : null}
                 inverted={!fixed}
-                pointing={!fixed}
                 size='large'
             >
                 <Container>
-                    <Menu.Item>
-                        <Link to="/">Início</Link>
-                    </Menu.Item>
-                    <Dropdown item simple text='Curiosidades'>
+                    {this.createItem(Menu, 'Início','/')}
+                    <Dropdown 
+                        className={this.subMenuIsActive('curiosidades') ? 'active item' : ''}
+                        text='Curiosidades' 
+                        item 
+                    >
                         <Dropdown.Menu>
-                            <Dropdown.Item>
-                                {this.createLink('Diferença entre Lager e Ale', '/curiosidades/diferenca-lager-ale')}
-                            </Dropdown.Item>
-                            <Dropdown.Item>
-                                {this.createLink('Principais estilos Lagers', '/curiosidades/estilos-lager')}
-                            </Dropdown.Item>
-                            <Dropdown.Item>Principais estilos Ales</Dropdown.Item>
+                            {this.createItem(Dropdown, 'Diferença entre Lager e Ale','/curiosidades/diferenca-lager-ale')}
+                            {this.createItem(Dropdown, 'Principais Estilos Lager','/curiosidades/estilos-lager')}
+                            {this.createItem(Dropdown, 'Principais Estilos Ales','/curiosidades/estilos-ale')}
                             <Dropdown.Item>Tipos de copos para cada estilo</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
@@ -70,4 +79,4 @@ class MyHomeBrewMenu extends Component {
     }
 }
 
-export default MyHomeBrewMenu;
+export default withRouter(MyHomeBrewMenu);

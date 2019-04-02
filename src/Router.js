@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import DiferencaEntreLagerAle from './pages/curiosidades/DiferencaEntreLagerAle';
 import EstilosLager from './pages/curiosidades/EstilosLager';

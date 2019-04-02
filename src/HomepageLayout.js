@@ -3,13 +3,8 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Responsive,
   Segment,
   Sidebar,
@@ -93,11 +88,9 @@ class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-            {/* @TODO: Adicionar menu */}
             <MyHomeBrewMenu fixed={fixed}/>
             <Router />
             <MyHomeBrewFooter />
-            {/* <HomepageHeading /> */}
           </Segment>
         </Visibility>
 
@@ -119,8 +112,8 @@ class MobileContainer extends Component {
   handleToggle = () => this.setState({ sidebarOpened: true })
 
   render() {
-    const { children } = this.props
-    const { sidebarOpened } = this.state
+    // const { children } = this.props
+    // const { sidebarOpened } = this.state
 
     return (
       <Responsive
