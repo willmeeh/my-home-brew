@@ -7,7 +7,7 @@ import {
   Menu
 } from 'semantic-ui-react'
 
-import Footer from './../base/Footer'
+import Footer from '../components/Footer'
 
 const FazendoCerveja = () => (
   <div>

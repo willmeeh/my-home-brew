@@ -10,12 +10,7 @@ import ProcessoCalculoServejeiros from './pages/ProcessoCalculoServejeiros'
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={HomepageLayout} />
-        <Route path="/Curiosidades" component={Curiosidades} />
-        <Route path="/Fazendo-a-sua-cerveja" component={FazendoCerveja} />
-        <Route path="/Processos-e-calculos-cervejeiros" component={ProcessoCalculoServejeiros} />
-      </Switch>
+      <HomepageLayout></HomepageLayout>
     );
   }
 }
