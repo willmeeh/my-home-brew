@@ -1,10 +1,8 @@
 import React from 'react'
 import {
     Container,
-    Divider,
     Grid,
     Header,
-    Image,
     List,
     Segment,
 } from 'semantic-ui-react'
@@ -43,29 +41,12 @@ const Footer = () => (
                     </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
-                    <Header inverted as='h4' content='Footer Header' />
+                    <Header inverted as='h4' content='My home brew' />
                     <p>
-                        Extra space for a call to action inside the footer that could help re-engage users.
+                        Aprenda pesquise e aprimore sua cerveja.
                     </p>
                 </Grid.Column>
             </Grid>
-
-            <Divider inverted section />
-            <Image centered size='mini' src='/logo.png' />
-            <List horizontal inverted divided link size='small'>
-                <List.Item as='a' href='#'>
-                    Site Map
-                </List.Item>
-                <List.Item as='a' href='#'>
-                    Contact Us
-                </List.Item>
-                <List.Item as='a' href='#'>
-                    Terms and Conditions
-                </List.Item>
-                <List.Item as='a' href='#'>
-                    Privacy Policys
-                </List.Item>
-            </List>
         </Container>
     </Segment>
 )
