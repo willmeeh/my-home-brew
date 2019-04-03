@@ -35,7 +35,7 @@ class MyHomeBrewMenu extends Component {
 
         return (
             <Menu
-                fixed={fixed ? 'top' : null}
+                fixed='top'
                 inverted={!fixed}
                 size='large'
             >

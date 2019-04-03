@@ -1,0 +1,33 @@
+
+.beer-glass {
+    width: 80px;
+    height: 120px;
+    border: 3px solid #000;
+    border-top: 1px solid transparent;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+    .beer-glass-liquid {
+        width: 100%;
+        height: 73%;
+    
+        border-top: none;
+        border: 1px solid #000;
+        border-radius: 11px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .beer-glass-foam {
+        width: 100%;
+        height: 27%;
+    
+        border: 1px solid #000;
+        background-color: #F7E7D8;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+
