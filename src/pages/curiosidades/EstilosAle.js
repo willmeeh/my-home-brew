@@ -1,18 +1,17 @@
-import _ from 'lodash'
-import React, { Component, createRef, Fragment } from 'react'
+import React, { Component, createRef } from 'react'
 import {
   Grid,
   Header,
   Rail,
-  Image,
   Ref,
   Segment,
   Sticky,
   Menu,
   Container
 } from 'semantic-ui-react'
-  import { withRouter } from "react-router-dom";
-  import Glass from "../../components/Glass";
+import { HashLink } from 'react-router-hash-link';
+import { withRouter } from "react-router-dom";
+import Glass from "../../components/Glass";
 
 class EstilosAle extends Component {
     // Fonte: http://www.cervejasdomundo.com/Ale.htm
@@ -20,8 +19,9 @@ class EstilosAle extends Component {
     contextRef = createRef()
 
     criarItemEstilo(estilo, index) {
+        const domId = 'estilo' + index;
         return (
-            <Fragment key={index}>
+            <Grid key={domId} id={domId}>
                 <Grid.Row>
                     <Grid.Column width={16}>
                         <Container fluid>
@@ -48,13 +48,30 @@ class EstilosAle extends Component {
                         </Grid.Column>
                     </Grid>
                 </Grid.Row>
-            </Fragment>
+            </Grid>
         );
     }
+    
 
     criarEstilos(estilos) {
         return estilos.map((estilo, index) => this.criarItemEstilo(estilo, index));
     }
+
+    criarMenuItem(estilo, index) {
+        const htmlAnchor = '#estilo' + index;
+        const active = window.location.hash === htmlAnchor;
+        return (
+            <Menu.Item active={active} key={"menuEstilo" + index} >
+                <HashLink 
+                    smooth 
+                    to={htmlAnchor}
+                >
+                    {estilo.titulo}
+                </HashLink>
+            </Menu.Item>
+        );
+    }
+
     handleRef = (node) => {
         this.functionalRef = node
     }
@@ -185,21 +202,18 @@ class EstilosAle extends Component {
 
         return (
             <Segment>
-                <Header as='h3'>Estilos</Header>
+                <Header as='h1' textAlign='center'>Principais Estilos ALE</Header>
                 <Grid centered columns={2}>
                     <Grid.Column>
                         <Ref innerRef={this.contextRef}>
                             <Segment>
-                                {console.log('this.contextRef', this.contextRef)}
-                                <Grid>
-                                    {this.criarEstilos(estilos)}
-                                </Grid>
+                                {this.criarEstilos(estilos)}
 
                                 <Rail position='left'>
                                     <Sticky context={this.contextRef} offset={50}>
                                         <Menu pointing secondary vertical>
                                             {estilos.map((estilo, index) => (
-                                                <Menu.Item key={index} name={estilo.titulo} />    
+                                                this.criarMenuItem(estilo, index)
                                             ))}
                                         </Menu>
                                     </Sticky>

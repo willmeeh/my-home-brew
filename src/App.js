@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
-import HomepageLayout from './HomepageLayout';
-
+import React, { Component } from 'react'
+import MyHomeBrewMenu from './components/Menu';
+import MyHomeBrewFooter from './components/Footer';
+import Router from './Router';
 class App extends Component {
   render() {
     return (
-      <HomepageLayout />
+      <div>
+        <MyHomeBrewMenu />
+        <div style={{ marginTop: '3em' }}>
+          <Router />
+        </div>
+        <MyHomeBrewFooter />
+      </div>
     );
   }
 }

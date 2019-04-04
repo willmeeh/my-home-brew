@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {  } from 'semantic-ui-react'
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import './glass.scss';
 

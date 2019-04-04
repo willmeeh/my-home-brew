@@ -31,12 +31,10 @@ class MyHomeBrewMenu extends Component {
     }
 
     render() {
-        const { fixed } = this.props
-
         return (
             <Menu
                 fixed='top'
-                inverted={!fixed}
+                inverted={true}
                 size='large'
             >
                 <Container>
