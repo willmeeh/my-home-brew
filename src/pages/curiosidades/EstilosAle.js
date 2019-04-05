@@ -1,81 +1,46 @@
-import React, { Component, createRef } from 'react'
-import {
-  Grid,
-  Header,
-  Rail,
-  Ref,
-  Segment,
-  Sticky,
-  Menu,
-  Container
-} from 'semantic-ui-react'
-import { HashLink } from 'react-router-hash-link';
+import React, { Component } from 'react'
 import { withRouter } from "react-router-dom";
 import Glass from "../../components/Glass";
+import { Anchor } from 'antd';
+import { Typography } from 'antd';
+import { Row, Col } from 'antd';
+
+const { Title, Paragraph } = Typography;
+const { Link: AnchorLink } = Anchor;
 
 class EstilosAle extends Component {
     // Fonte: http://www.cervejasdomundo.com/Ale.htm
 
-    contextRef = createRef()
-
-    criarItemEstilo(estilo, index) {
-        const domId = 'estilo' + index;
-        return (
-            <Grid key={domId} id={domId}>
-                <Grid.Row>
-                    <Grid.Column width={16}>
-                        <Container fluid>
-                            <Header as='h2'>{estilo.titulo}</Header>
-                            {estilo.paragrafos.map((paragrafo, index) => <p key={index}>{paragrafo}</p>)}
-                        </Container>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid centered columns={3}>
-                        <Grid.Column verticalAlign='middle'>
-                            <Header as='h3'>{estilo.ibu}</Header>
-                            <Header as='h3'>IBUS</Header>
-                        </Grid.Column>
-                        <Grid.Column verticalAlign='middle'>
-                            <Header as='h3'>{estilo.abv}</Header>
-                            <Header as='h3'>ABVS</Header>
-                        </Grid.Column>
-                        <Grid.Column verticalAlign='middle'>
-                            <Glass 
-                                corEspuma={estilo.corEspuma}
-                                corLiquido={estilo.corLiquido}
-                            />
-                        </Grid.Column>
-                    </Grid>
-                </Grid.Row>
-            </Grid>
-        );
-    }
-    
-
     criarEstilos(estilos) {
-        return estilos.map((estilo, index) => this.criarItemEstilo(estilo, index));
+        return estilos.map((estilo, index) => {
+            const domId = 'anchor' + index;
+            const containerStyle = {
+                alignItems: 'center',
+                marginBottom: '3em'
+            }
+            return (
+                <Row id={domId} type="flex" style={containerStyle}>
+                    <Col span={5}>
+                        <Glass 
+                            corEspuma={estilo.corEspuma}
+                            corLiquido={estilo.corLiquido}
+                            abv={estilo.abv}
+                            ibu={estilo.ibu}
+                        />
+                    </Col>
+                    <Col span={19}>
+                        <Row>
+                            <Col span={24}>
+                                <Title level={4}>{estilo.titulo}</Title>
+                                {estilo.paragrafos.map((paragrafo, index) => <Paragraph key={index}>{paragrafo}</Paragraph>)}
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            )
+        });
     }
 
-    criarMenuItem(estilo, index) {
-        const htmlAnchor = '#estilo' + index;
-        const active = window.location.hash === htmlAnchor;
-        return (
-            <Menu.Item active={active} key={"menuEstilo" + index} >
-                <HashLink 
-                    smooth 
-                    to={htmlAnchor}
-                >
-                    {estilo.titulo}
-                </HashLink>
-            </Menu.Item>
-        );
-    }
-
-    handleRef = (node) => {
-        this.functionalRef = node
-    }
-    
     render() {
         const estilos = [
             {
@@ -85,17 +50,17 @@ class EstilosAle extends Component {
                 ],
                 corLiquido: '#CC3D01',
                 corEspuma: '#F7E7D8',
-                abv: '4.5 - 7.0',
-                ibu: '40 - 100'
+                abv: '4.5-7.0',
+                ibu: '40-100'
             },
             {
-                titulo: 'Amber Lager',
+                titulo: 'Baltic Porter',
                 paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
+                    'Durante o século XVIII, as Porters eram bem mais fortes do que o são hoje em dia, sendo que facilmente ultrapassavam os 7% de volume de álcool. Muitas cervejeiras inglesas faziam mesmo produtos mais fortes destinados à exportação, tendo como principal mercado os países em redor do Mar Báltico. Estas cervejas eram derivadas das Porter inglesas mas tinham também algumas influências das Russian Imperial Stouts, pelo que por vezes podem ser identificadas como Imperial Porters. É um estilo muito complexo,especialmente o sabor, com presença de chocolate e malte torrado, elaborado com lúpulo continental e malte de Viena ou de Munique. Apesar de tudo, é uma cerveja não muito pesada devido a uma boa presença de gás.'
                 ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
+                corLiquido: '#0C0C0E',
+                corEspuma: '#A18F68',
+                abv: '7+',
                 ibu: '20 - 60'
             },
             {
@@ -108,121 +73,24 @@ class EstilosAle extends Component {
                 abv: '4.5 - 7.0',
                 ibu: '20 - 60'
             },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            },
-            {
-                titulo: 'Amber Lager',
-                paragrafos: [
-                    'Sendo esta uma designação muito genérica, as Amber Ale podem variar desde produtos sem grande interesse e caramelizados, a cervejas como uma boa quantidade e balanço entre malte e lúpulo. Habitualmente, a diferença entre uma Amber Ale de qualidade e uma Ameriacan Pale reside no facto da primeira poder ter um carácter mais escuro devido ao malte utilizado, tendo em contrapartida menos lúpulo.'
-                ],
-                corLiquido: '#F26A38',
-                corEspuma: '#FDF6E9',
-                abv: '4.5 - 7.0',
-                ibu: '20 - 60'
-            }
         ];
 
         return (
-            <Segment>
-                <Header as='h1' textAlign='center'>Principais Estilos ALE</Header>
-                <Grid centered columns={2}>
-                    <Grid.Column>
-                        <Ref innerRef={this.contextRef}>
-                            <Segment>
-                                {this.criarEstilos(estilos)}
-
-                                <Rail position='left'>
-                                    <Sticky context={this.contextRef} offset={50}>
-                                        <Menu pointing secondary vertical>
-                                            {estilos.map((estilo, index) => (
-                                                this.criarMenuItem(estilo, index)
-                                            ))}
-                                        </Menu>
-                                    </Sticky>
-                                </Rail>
-                            </Segment>
-                        </Ref>
-                    </Grid.Column>
-                </Grid>
-            </Segment>
+            <Row>
+                <Col span={24}>
+                    <Title style={{ textAlign: 'center' }}>Principais estilos ale</Title>
+                </Col>
+                <Col span={20}>
+                    {this.criarEstilos(estilos)}
+                </Col>
+                <Col span={4} style={{ padding: '20px' }}>
+                    <Anchor showInkInFixed={false} offsetTop={64}>
+                        {estilos.map((estilo, index) => (
+                            <AnchorLink href={'#anchor' + index} title={estilo.titulo} />
+                        ))}
+                    </Anchor>    
+                </Col>
+            </Row>
         );
     }
 }
