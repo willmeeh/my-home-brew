@@ -5,9 +5,7 @@ import { withRouter, Link } from "react-router-dom";
 const SubMenu = Menu.SubMenu;
 class MyHomeBrewMenu extends Component {
 
-    state = {
-        current: 'mail',
-    }
+    state = { current: null }
     
     handleClick = (e) => {
         this.setState({
@@ -22,6 +20,12 @@ class MyHomeBrewMenu extends Component {
                 <Link to={route} />
             </Menu.Item>
         );
+    }
+
+    componentDidMount() {
+        this.setState({
+            current: this.props.location.pathname
+        })
     }
 
     render() {
