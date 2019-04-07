@@ -5,19 +5,19 @@ import DiferencaEntreLagerAle from 'pages/curiosidades/DiferencaEntreLagerAle';
 import BjcpStyles2015 from 'pages/BjcpStyles2015';
 
 export const ROUTES = [
-  { path: '/', name: 'Início', component: Home },
+  { path: '/my-home-brew', name: 'Início', component: Home },
   { 
-    path: '/curiosidades/diferenca-lager-ale', 
+    path: '/my-home-brew/curiosidades/diferenca-lager-ale', 
     name: 'Início', 
     component: DiferencaEntreLagerAle 
   },
   { 
-    path: '/curiosidades/diferenca-lager-ale', 
+    path: '/my-home-brew/curiosidades/diferenca-lager-ale', 
     name: 'Diferença entre Lagers e Ales', 
     component: DiferencaEntreLagerAle
   },
   { 
-    path: '/bjcp-styles-2015', 
+    path: '/my-home-brew/bjcp-styles-2015', 
     name: 'Estilos BJCP 2015', 
     component: BjcpStyles2015 
   },

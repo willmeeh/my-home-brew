@@ -37,27 +37,27 @@ class MyHomeBrewMenu extends Component {
                 theme="dark"
                 style={{ lineHeight: '64px' }}
             >
-                {this.createItem('Início','/')}
-                {this.createItem('Estilos BJCP 2015', '/bjcp-styles-2015/')}
+                {this.createItem('Início','/my-home-brew')}
+                {this.createItem('Estilos BJCP 2015', '/my-home-brew/bjcp-styles-2015')}
                 <SubMenu title={'Curiosidades'}>
-                    {this.createItem('Diferença entre Lagers e Ales', '/curiosidades/diferenca-lager-ale')}
-                    {this.createItem('Tipos de copos para cada estilo', '/')}
+                    {this.createItem('Diferença entre Lagers e Ales', '/my-home-brew/curiosidades/diferenca-lager-ale')}
+                    {this.createItem('Tipos de copos para cada estilo', '/my-home-brew')}
                 </SubMenu>
                 <SubMenu title={'Fazendo a sua cerveja'}>
-                    {this.createItem('1. Introduçao', '/')}
-                    {this.createItem('2. Equipamentos', '/')}
-                    {this.createItem('3. Ingredientes', '/')}
-                    {this.createItem('4. Moagem do malte', '/')}
-                    {this.createItem('5. Mosturação', '/')}
-                    {this.createItem('6. Sanitização dos equipamentos', '/')}
-                    {this.createItem('7. Fermetação', '/')}
-                    {this.createItem('8. Envase', '/')}
+                    {this.createItem('1. Introduçao', '/my-home-brew')}
+                    {this.createItem('2. Equipamentos', '/my-home-brew')}
+                    {this.createItem('3. Ingredientes', '/my-home-brew')}
+                    {this.createItem('4. Moagem do malte', '/my-home-brew')}
+                    {this.createItem('5. Mosturação', '/my-home-brew')}
+                    {this.createItem('6. Sanitização dos equipamentos', '/my-home-brew')}
+                    {this.createItem('7. Fermetação', '/my-home-brew')}
+                    {this.createItem('8. Envase', '/my-home-brew')}
                 </SubMenu>
                 <SubMenu title={'Processos e cálculos cervejeiros'}>
-                    {this.createItem('Priming', '/')}
-                    {this.createItem('Cálculos da água', '/')}
-                    {this.createItem('Temperaturas de Mosturação', '/')}
-                    {this.createItem('Dry Hopping', '/')}
+                    {this.createItem('Priming', '/my-home-brew')}
+                    {this.createItem('Cálculos da água', '/my-home-brew')}
+                    {this.createItem('Temperaturas de Mosturação', '/my-home-brew')}
+                    {this.createItem('Dry Hopping', '/my-home-brew')}
                 </SubMenu>
             </Menu>
         );
