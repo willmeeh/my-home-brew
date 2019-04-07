@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch } from "react-router-dom";
-import Home from './pages/Home';
-import DiferencaEntreLagerAle from './pages/curiosidades/DiferencaEntreLagerAle';
-import EstilosLager from './pages/curiosidades/EstilosLager';
-import EstilosAle from './pages/curiosidades/EstilosAle';
+import Home from 'pages/Home';
+import DiferencaEntreLagerAle from 'pages/curiosidades/DiferencaEntreLagerAle';
+import BjcpStyles2015 from 'pages/BjcpStyles2015';
 
 export const ROUTES = [
   { path: '/', name: 'Início', component: Home },
@@ -18,14 +17,9 @@ export const ROUTES = [
     component: DiferencaEntreLagerAle
   },
   { 
-    path: '/curiosidades/estilos-lager', 
-    name: 'Principais Estilos Lager', 
-    component: EstilosLager 
-  },
-  { 
-    path: '/curiosidades/estilos-ale', 
-    name: 'Principais Estilos Ale', 
-    component: EstilosAle 
+    path: '/bjcp-styles-2015', 
+    name: 'Estilos BJCP 2015', 
+    component: BjcpStyles2015 
   },
 ];
 

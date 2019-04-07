@@ -38,10 +38,9 @@ class MyHomeBrewMenu extends Component {
                 style={{ lineHeight: '64px' }}
             >
                 {this.createItem('Início','/')}
+                {this.createItem('Estilos BJCP 2015', '/bjcp-styles-2015/')}
                 <SubMenu title={'Curiosidades'}>
                     {this.createItem('Diferença entre Lagers e Ales', '/curiosidades/diferenca-lager-ale')}
-                    {this.createItem('Principais Estilos Lagers', '/curiosidades/estilos-lager')}
-                    {this.createItem('Principais Estilos Ales', '/curiosidades/estilos-ale')}
                     {this.createItem('Tipos de copos para cada estilo', '/')}
                 </SubMenu>
                 <SubMenu title={'Fazendo a sua cerveja'}>
