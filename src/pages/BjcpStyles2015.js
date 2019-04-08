@@ -26,6 +26,7 @@ class BjcpStyles2015 extends Component {
                 }
             }
         }
+        window.scrollTo(0, 0);
     }
 
     createCategoriesMenu(categories) {
