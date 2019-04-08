@@ -15,10 +15,16 @@ class Glass extends Component {
         if (vitalStatistic) {
             const { ibu, abv, og, fg, srm } = vitalStatistic;
             if (srm) {
-                const liquidColor = convertSrmToRGB(srm.split(/-/)[0]);
-                const liquidStyle = { 'backgroundColor': liquidColor };
+                const liquidColor1 = convertSrmToRGB(srm.split(/-/)[0]);
+                const liquidColor2 = convertSrmToRGB(srm.split(/-/)[1]);
+
+                let liquidColor = liquidColor1;
+                if (liquidColor2) {
+                    liquidColor = `linear-gradient(to right, ${liquidColor2}, ${liquidColor1})`
+                }
+                const liquidStyle = { 'background': liquidColor };
                 const foamStyle = { 'backgroundColor': foamColor };
-                const characteristicsStyle = { 'color': invertColor(liquidColor, true) };
+                const characteristicsStyle = { 'color': invertColor(liquidColor1, true) };
 
                 return (
                     <div className="beer-glass">
