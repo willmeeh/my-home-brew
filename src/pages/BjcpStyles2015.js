@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 
 import { createStylesDescription } from 'components/BeerStyleDescription'
 import bjcpStyles from 'data/bjcp-2015-guideliness-pt-br.min.json';
+import BjcpGuide from "components/BjcpGuide.js";
 
 const SubMenu = Menu.SubMenu;
 const { Content, Sider } = Layout;
@@ -57,7 +58,7 @@ class BjcpStyles2015 extends Component {
                         </Menu>
                     </Sider>
                     <Content className="page-content">
-                        {selectedStyle ? createStylesDescription([selectedStyle]) : '@TODO: Adicionar componente com o guia de estilos'}
+                        {selectedStyle ? createStylesDescription([selectedStyle]) : <BjcpGuide />}
                     </Content>
                 </Layout>
             </Fragment>
