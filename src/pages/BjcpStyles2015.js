@@ -10,7 +10,16 @@ const SubMenu = Menu.SubMenu;
 const { Content, Sider } = Layout;
 
 class BjcpStyles2015 extends Component {
-    state = { selectedStyle: null }
+    state = { collapsed: false, selectedStyle: null, barWeight: 200 }
+
+    onCollapse = (collapsed) => {
+        this.setState({ collapsed });
+        if (collapsed) {
+            this.setState({ barWeight: 100 });
+        } else {
+            this.setState({ barWeight: 200 });
+        }
+    }
 
     handleClick = (e) => {
         const { key, keyPath } = e;
@@ -42,25 +51,28 @@ class BjcpStyles2015 extends Component {
     }
 
     render() {
-        const { selectedStyle } = this.state;
+        const { selectedStyle, barWeight } = this.state;
 
         return (
             <Fragment>
-                <Layout className="page-layout">
-                    <Sider width={256} className="fixed-page-sider">
-                        <Menu
-                            onClick={this.handleClick}
-                            defaultSelectedKeys={["guia"]}
-                            style={{ width: 256 }}
-                            mode="inline"
-                        >
+                <Layout>
+                    <Sider
+                        collapsible
+                        collapsed={this.state.collapsed}
+                        onCollapse={this.onCollapse}
+                        style={{
+                            overflow: 'auto', height: '100vh', position: 'fixed', left: 0,
+                        }}>
+                        <Menu theme="light" onClick={this.handleClick} defaultSelectedKeys={["guia"]} mode="inline">
                             <Menu.Item key="guia">Guia</Menu.Item>
                             {this.createCategoriesMenu(bjcpStyles)}
                         </Menu>
                     </Sider>
-                    <Content className="fixed-page-content">
-                        {selectedStyle ? createStylesDescription([selectedStyle]) : <BjcpGuide />}
-                    </Content>
+                    <Layout style={{ marginLeft: barWeight }}>
+                        <Content className="fixed-page-content">
+                            {selectedStyle ? createStylesDescription([selectedStyle]) : <BjcpGuide />}
+                        </Content>
+                    </Layout>
                 </Layout>
             </Fragment>
         );

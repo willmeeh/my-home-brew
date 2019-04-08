@@ -31,16 +31,26 @@ class BeerStyleDescription extends Component {
         } = this.props;
 
         const containerStyle = {
+            marginTop: '20px',
             alignItems: 'center',
             marginBottom: '4em'
         }
 
+        const minSizeGlass=  {
+            alignItems: 'center',
+            minWidth: '165px'
+        }
+
+        const contentStyle = {
+            marginTop: '50px'
+        }
+
         return (
             <Row id={id} style={containerStyle}>
-                <Col span={5}>
+                <Col style={minSizeGlass} md={5}>
                     <Glass {...this.props} />
                 </Col>
-                <Col span={19}>
+                <Col md={19} style={contentStyle}>
                     <Row>
                         <Col span={24}>
                             <Title level={3}>{styleName}</Title>

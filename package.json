@@ -2,7 +2,7 @@
   "name": "my-home-brew",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://willmeeh.github.io/my-home-brew",
+  "homepage": "https://willmeeh.github.io/my-home-brew",
   "dependencies": {
     "antd": "^3.16.1",
     "gh-pages": "^2.0.1",

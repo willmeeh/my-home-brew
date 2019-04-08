@@ -1,4 +1,4 @@
-$base-scale: 9;
+$base-scale: 8;
 
 $width: $base-scale * 1em;
 $heigth: $base-scale * 1.4em;
@@ -39,7 +39,7 @@ $heigth: $base-scale * 1.4em;
     }
 
     .beer-description {
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1.5em;
         text-align: left;
     }
