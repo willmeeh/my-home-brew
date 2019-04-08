@@ -46,7 +46,7 @@ class BjcpStyles2015 extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout">
-                    <Sider width={256} className="page-sider">
+                    <Sider width={256} className="fixed-page-sider">
                         <Menu
                             onClick={this.handleClick}
                             defaultSelectedKeys={["guia"]}
@@ -57,7 +57,7 @@ class BjcpStyles2015 extends Component {
                             {this.createCategoriesMenu(bjcpStyles)}
                         </Menu>
                     </Sider>
-                    <Content className="page-content">
+                    <Content className="fixed-page-content">
                         {selectedStyle ? createStylesDescription([selectedStyle]) : <BjcpGuide />}
                     </Content>
                 </Layout>

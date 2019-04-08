@@ -23,6 +23,21 @@
     .page-sider {
         background: #fff;
     }
+    
+    .fixed-page-sider {
+        overflow: auto;
+        height: 90vh;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        overflow-x: hidden;
+    }
+
+    .fixed-page-content {
+        padding: 0 24px;
+        min-height: 280px;
+        margin-left: 250px;
+    }
 }
 
 .text-center {
