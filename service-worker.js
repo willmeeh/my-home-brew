@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://willmeeh.github.io/my-home-brew/precache-manifest.bf7b78d17ff609619cff7a41fef338b4.js"
+  "/my-home-brew/precache-manifest.8f2c36b183f17c8139a2a6522ecbc289.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("https://willmeeh.github.io/my-home-brew/index.html", {
+workbox.routing.registerNavigationRoute("/my-home-brew/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

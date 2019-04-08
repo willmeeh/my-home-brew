@@ -1,15 +1,15 @@
 {
-  "main.css": "https://willmeeh.github.io/my-home-brew/static/css/main.c1ef491e.chunk.css",
-  "main.js": "https://willmeeh.github.io/my-home-brew/static/js/main.1840215e.chunk.js",
-  "main.js.map": "https://willmeeh.github.io/my-home-brew/static/js/main.1840215e.chunk.js.map",
-  "runtime~main.js": "https://willmeeh.github.io/my-home-brew/static/js/runtime~main.a640fc0e.js",
-  "runtime~main.js.map": "https://willmeeh.github.io/my-home-brew/static/js/runtime~main.a640fc0e.js.map",
-  "static/css/2.23af97d5.chunk.css": "https://willmeeh.github.io/my-home-brew/static/css/2.23af97d5.chunk.css",
-  "static/js/2.0af0663d.chunk.js": "https://willmeeh.github.io/my-home-brew/static/js/2.0af0663d.chunk.js",
-  "static/js/2.0af0663d.chunk.js.map": "https://willmeeh.github.io/my-home-brew/static/js/2.0af0663d.chunk.js.map",
-  "index.html": "https://willmeeh.github.io/my-home-brew/index.html",
-  "precache-manifest.bf7b78d17ff609619cff7a41fef338b4.js": "https://willmeeh.github.io/my-home-brew/precache-manifest.bf7b78d17ff609619cff7a41fef338b4.js",
-  "service-worker.js": "https://willmeeh.github.io/my-home-brew/service-worker.js",
-  "static/css/2.23af97d5.chunk.css.map": "https://willmeeh.github.io/my-home-brew/static/css/2.23af97d5.chunk.css.map",
-  "static/css/main.c1ef491e.chunk.css.map": "https://willmeeh.github.io/my-home-brew/static/css/main.c1ef491e.chunk.css.map"
+  "main.css": "/my-home-brew/static/css/main.a8a8018e.chunk.css",
+  "main.js": "/my-home-brew/static/js/main.78983480.chunk.js",
+  "main.js.map": "/my-home-brew/static/js/main.78983480.chunk.js.map",
+  "runtime~main.js": "/my-home-brew/static/js/runtime~main.36a0bf9a.js",
+  "runtime~main.js.map": "/my-home-brew/static/js/runtime~main.36a0bf9a.js.map",
+  "static/css/2.23af97d5.chunk.css": "/my-home-brew/static/css/2.23af97d5.chunk.css",
+  "static/js/2.005a4724.chunk.js": "/my-home-brew/static/js/2.005a4724.chunk.js",
+  "static/js/2.005a4724.chunk.js.map": "/my-home-brew/static/js/2.005a4724.chunk.js.map",
+  "index.html": "/my-home-brew/index.html",
+  "precache-manifest.8f2c36b183f17c8139a2a6522ecbc289.js": "/my-home-brew/precache-manifest.8f2c36b183f17c8139a2a6522ecbc289.js",
+  "service-worker.js": "/my-home-brew/service-worker.js",
+  "static/css/2.23af97d5.chunk.css.map": "/my-home-brew/static/css/2.23af97d5.chunk.css.map",
+  "static/css/main.a8a8018e.chunk.css.map": "/my-home-brew/static/css/main.a8a8018e.chunk.css.map"
 }
