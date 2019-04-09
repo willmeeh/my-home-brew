@@ -44,14 +44,13 @@ class MyHomeBrewMenu extends Component {
                     {this.createItem('Tipos de copos para cada estilo', '/my-home-brew')}
                 </SubMenu>
                 <SubMenu title={'Fazendo a sua cerveja'}>
-                    {this.createItem('1. Introduçao', '/my-home-brew')}
-                    {this.createItem('2. Equipamentos', '/my-home-brew')}
-                    {this.createItem('3. Ingredientes', '/my-home-brew')}
-                    {this.createItem('4. Moagem do malte', '/my-home-brew')}
-                    {this.createItem('5. Mosturação', '/my-home-brew')}
-                    {this.createItem('6. Sanitização dos equipamentos', '/my-home-brew')}
-                    {this.createItem('7. Fermetação', '/my-home-brew')}
-                    {this.createItem('8. Envase', '/my-home-brew')}
+                    {this.createItem('1. Equipamentos', '/my-home-brew/make-your-beer/equipments')}
+                    {this.createItem('2. Ingredientes', '/my-home-brew')}
+                    {this.createItem('3. Moagem do malte', '/my-home-brew')}
+                    {this.createItem('4. Mosturação', '/my-home-brew')}
+                    {this.createItem('5. Sanitização dos equipamentos', '/my-home-brew')}
+                    {this.createItem('6. Fermetação', '/my-home-brew')}
+                    {this.createItem('7. Envase', '/my-home-brew')}
                 </SubMenu>
                 <SubMenu title={'Processos e cálculos cervejeiros'}>
                     {this.createItem('Priming', '/my-home-brew')}
