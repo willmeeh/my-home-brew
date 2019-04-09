@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from 'pages/Home';
 import DiferencaEntreLagerAle from 'pages/curiosidades/DiferencaEntreLagerAle';
 import BjcpStyles2015 from 'pages/BjcpStyles2015';
+import Equipments from 'pages/make-your-beer/Equipments';
 
 export const ROUTES = [
   { path: '/my-home-brew', name: 'Início', component: Home },
@@ -20,6 +21,11 @@ export const ROUTES = [
     path: '/my-home-brew/bjcp-styles-2015', 
     name: 'Estilos BJCP 2015', 
     component: BjcpStyles2015 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/equipments', 
+    name: 'Equipamentos', 
+    component: Equipments 
   },
 ];
 

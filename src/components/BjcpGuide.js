@@ -4,7 +4,6 @@ import { Typography, Anchor, Layout } from 'antd';
 import BasicTypography from 'components/BasicTypography';
 import bjcpGuideData from 'data/bjcp-2015-guideliness-pt-br-guide.json';
 
-const { Title, Paragraph } = Typography;
 const { Link: AnchorLink } = Anchor;
 const { Content, Sider } = Layout;
 
