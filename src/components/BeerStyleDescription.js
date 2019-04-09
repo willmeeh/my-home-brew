@@ -52,7 +52,7 @@ class BeerStyleDescription extends Component {
                 </Col>
                 <Col md={19} style={contentStyle}>
                     <Row>
-                        <Col span={24}>
+                        <Col gutter={16} span={24}>
                             <Title level={3}>{styleName}</Title>
                             <Paragraph>{generalImpression}</Paragraph>
 

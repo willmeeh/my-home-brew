@@ -63,7 +63,7 @@ class BjcpStyles2015 extends Component {
                         style={{
                             overflow: 'auto', height: '100vh', position: 'fixed', left: 0,
                         }}>
-                        <Menu theme="light" onClick={this.handleClick} defaultSelectedKeys={["guia"]} mode="inline">
+                        <Menu style={{marginBottom: '110px'}} theme="light" onClick={this.handleClick} defaultSelectedKeys={["guia"]} mode="inline">
                             <Menu.Item key="guia">Guia</Menu.Item>
                             {this.createCategoriesMenu(bjcpStyles)}
                         </Menu>
