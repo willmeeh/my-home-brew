@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
 import { Typography, Anchor, Layout } from 'antd';
-
+import BasicTypography from 'components/BasicTypography';
 import bjcpGuideData from 'data/bjcp-2015-guideliness-pt-br-guide.json';
 
 const { Title, Paragraph } = Typography;
@@ -12,19 +12,6 @@ class BeerStyleDescription extends Component {
 
     createIdFromTitle(title) {
         return title.trim().replace(/ /, '');
-    }
-
-    createContent(bjcpGuideData) {
-        return bjcpGuideData.map(({ title, paragraphs }) => (
-            <Fragment>
-                <Title level={3} id={this.createIdFromTitle(title)}>{title}</Title>
-                {paragraphs.map((p) => (
-                    <Paragraph>
-                        <span dangerouslySetInnerHTML={{ __html: p }}></span>
-                    </Paragraph>
-                ))}
-            </Fragment>
-        ));
     }
 
     createAnchor(bjcpGuideData) {
@@ -43,7 +30,7 @@ class BeerStyleDescription extends Component {
             <Fragment>
                 <Layout className="page-layout">
                     <Content className="page-content">
-                        {this.createContent(bjcpGuideData)}
+                        <BasicTypography texts={bjcpGuideData} />
                     </Content>
                     <Sider width={256} className="page-sider">
                         <Anchor offsetTop={64}>
