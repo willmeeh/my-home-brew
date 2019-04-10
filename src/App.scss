@@ -53,3 +53,17 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+/* For demo */
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 700px;
+    padding-bottom: 100px;
+    line-height: 160px;
+    background: #625441;
+    overflow: hidden;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
