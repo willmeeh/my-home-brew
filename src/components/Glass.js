@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import { Typography } from 'antd';
-import { invertColor } from 'utils/color';
-import { convertSrmToRGB } from 'utils/srm-to-hex';
+import { invertColor } from '../utils/color';
+import { convertSrmToRGB } from '../utils/srm-to-hex';
 import './glass.scss';
 
 const { Text } = Typography;

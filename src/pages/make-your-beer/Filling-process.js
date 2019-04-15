@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
 import { Typography, Anchor, Layout, Card, Col, Row } from 'antd';
-import BasicTypography from 'components/BasicTypography';
 
 const { Title, Paragraph } = Typography;
 const { Link: AnchorLink } = Anchor;
@@ -17,22 +16,19 @@ class Equipments extends Component {
     createAnchor(bjcpGuideData) {
         return bjcpGuideData.map(({ title }) => (
             <Fragment>
-                <AnchorLink 
-                    href={'#' + this.createIdFromTitle(title)} 
-                    title={title} 
+                <AnchorLink
+                    href={'#' + this.createIdFromTitle(title)}
+                    title={title}
                 />
             </Fragment>
         ));
     }
     renderImage(src, description) {
-        const style = { width: 250 };
         return (
             <Fragment>
-                {/* <label>{description}:</label><br/>
-                <img style={style} src={} alt={description}/> */}
                 <Card
                     style={{ width: 240 }}
-                    cover={<img src={src} />}
+                    cover={<img alt={description} src={src} />}
                 >
                     <Meta
                         title={description}
@@ -46,39 +42,7 @@ class Equipments extends Component {
         const texts = [
             {
                 'title': 'Kit básico para produzir cerveja',
-            },
-            {
-                'title': 'Moagem dos grãos',
-            },
-            {
-                'title': 'Brassagem',
-            },
-            {
-                'title': 'Hora de aquecer',
-            },
-            {
-                'title': 'Resfriadores (ou chiller)',
-                'paragraphs': [
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                ]
-            },
-            {
-                'title': 'Toques finais',
-                'paragraphs': [
-                    'Para acabar não posso deixar de mencionar três equipamentos básicos que são essenciais na produção das cervejas',
-                    'Termômetro',
-                    'Pá cervejeira',
-                    'Fixador de tampinhas (e garrafas)',
-                    'Nem pense em começar a sua produção sem um termômetro, uma pá cervejeira para mexer a mistura e uma balança para medir a quantidade de malte e de lúpulo, ok?',
-                    'Animado para começar sua produção? Então baixe esse artigo em PDF e aprenda em qualquer lugar sobre os equipamentos necessários para produzir cerveja.',
-                ]
-            },
-
+            }
         ]
 
         return (

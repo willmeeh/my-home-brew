@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
 import { Layout, Menu } from 'antd';
 
-import { createStylesDescription } from 'components/BeerStyleDescription'
-import bjcpStyles from 'data/bjcp-2015-guideliness-pt-br.min.json';
-import BjcpGuide from "components/BjcpGuide.js";
+import { createStylesDescription } from '../components/BeerStyleDescription'
+import bjcpStyles from '../data/bjcp-2015-guideliness-pt-br.min.json';
+import BjcpGuide from "../components/BjcpGuide.js";
 
 const SubMenu = Menu.SubMenu;
 const { Content, Sider } = Layout;

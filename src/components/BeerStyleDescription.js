@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom";
 import { Row, Col, Typography } from 'antd';
-import Glass from "components/Glass";
+import Glass from "./Glass";
 
 const { Title, Paragraph } = Typography;
 
@@ -15,9 +15,9 @@ export const createStylesDescription = (styles) => {
 class BeerStyleDescription extends Component {
 
     render() {
-        const { 
+        const {
             id,
-            styleName, 
+            styleName,
             generalImpression,
             aroma,
             appearance,

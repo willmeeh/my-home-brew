@@ -6,13 +6,13 @@ const SubMenu = Menu.SubMenu;
 class MyHomeBrewMenu extends Component {
 
     state = { current: null }
-    
+
     handleClick = (e) => {
         this.setState({
             current: e.key,
         });
     }
-    
+
     createItem(text, route) {
         return (
             <Menu.Item key={route}>
@@ -45,12 +45,12 @@ class MyHomeBrewMenu extends Component {
                 </SubMenu> */}
                 <SubMenu title={'Fazendo a sua cerveja'}>
                     {this.createItem('1. Equipamentos', '/my-home-brew/make-your-beer/equipments')}
-                    {this.createItem('2. Ingredientes', '/my-home-brew/ingredients')}
-                    {this.createItem('3. Moagem do malte', '/my-home-brew/milling-malt')}
-                    {this.createItem('4. Mosturação', '/my-home-brew/mashing')}
-                    {this.createItem('5. Sanitização dos equipamentos', '/my-home-brew/equipment-sanitization')}
-                    {this.createItem('6. Fermetação', '/my-home-brew/fermentation')}
-                    {this.createItem('7. Envase', '/my-home-brew/filling-process')}
+                    {this.createItem('2. Ingredientes', '/my-home-brew/make-your-beer/ingredients')}
+                    {this.createItem('3. Moagem do malte', '/my-home-brew/make-your-beer/milling-malt')}
+                    {this.createItem('4. Mosturação', '/my-home-brew/make-your-beer/mashing')}
+                    {this.createItem('5. Sanitização dos equipamentos', '/my-home-brew/make-your-beer/equipment-sanitization')}
+                    {this.createItem('6. Fermetação', '/my-home-brew/make-your-beer/fermentation')}
+                    {this.createItem('7. Envase', '/my-home-brew/make-your-beer/filling-process')}
                 </SubMenu>
                 {/* <SubMenu title={'Processos e cálculos cervejeiros'}>
                     {this.createItem('Priming', '/my-home-brew')}

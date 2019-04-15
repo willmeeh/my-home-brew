@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
 import { Typography, Anchor, Layout, Card, Col, Row } from 'antd';
-import BasicTypography from 'components/BasicTypography';
 
 const { Title, Paragraph } = Typography;
 const { Link: AnchorLink } = Anchor;
@@ -17,22 +16,19 @@ class Equipments extends Component {
     createAnchor(bjcpGuideData) {
         return bjcpGuideData.map(({ title }) => (
             <Fragment>
-                <AnchorLink 
-                    href={'#' + this.createIdFromTitle(title)} 
-                    title={title} 
+                <AnchorLink
+                    href={'#' + this.createIdFromTitle(title)}
+                    title={title}
                 />
             </Fragment>
         ));
     }
     renderImage(src, description) {
-        const style = { width: 250 };
         return (
             <Fragment>
-                {/* <label>{description}:</label><br/>
-                <img style={style} src={} alt={description}/> */}
                 <Card
                     style={{ width: 240 }}
-                    cover={<img src={src} />}
+                    cover={<img alt={description} src={src} />}
                 >
                     <Meta
                         title={description}
@@ -54,9 +50,6 @@ class Equipments extends Component {
                 'title': 'Brassagem',
             },
             {
-                'title': 'Hora de aquecer',
-            },
-            {
                 'title': 'Resfriadores (ou chiller)',
             },
             {
@@ -72,7 +65,7 @@ class Equipments extends Component {
                         <Title id={this.createIdFromTitle('Kit básico para produzir cerveja')} level={3}>Kit básico para produzir cerveja</Title>
                         <Paragraph>Uma dúvida normal que todos nós cervejeiros caseiros enfrentamos no início é: “quais são os equipamentos necessários que eu preciso ter para começar a fazer cerveja em casa”?</Paragraph>
                         <Paragraph>Hoje no mercado existem muitos kits de produção prontos, ou seja, com todos os equipamentos prontinhos para você ir lá e fazer o que deseja. Porém, esses kits são bem diversos e para o cervejeiro que está começando, muitas vezes, esses equipamentos fornecem alguns utensílios que não precisaremos no início e outros que seriam mais importantes, não vem nos kits.</Paragraph>
-                        
+
                         <Title id={this.createIdFromTitle('Moagem dos grãos')} level={3}>Moagem dos grãos</Title>
                         <Paragraph>Para dar início a nossa produção e entender quais os melhores equipamentos que devemos comprar, vale a pena entender também dos processos de fabricação. Quanto maior entendimento de como fazer cerveja em casa, melhor.</Paragraph>
                         <Paragraph>Você pode ter a opção de querer ou não moer os grãos, isso claro, se você usar o método “all grain”, ou seja, utilizar em sua produção uma cerveja feita 100% grãos.</Paragraph>

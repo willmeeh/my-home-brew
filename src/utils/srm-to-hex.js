@@ -41,13 +41,9 @@ const map = [
     { hex: '#36080A', srm: '40' },
 ];
 
-function rgbToHex(r, g, b) {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
-
 export const convertSrmToRGB = (srm) => {
     const srmToCompare = String(Math.round(Number(srm)));
-    const valueOfMap = map.find((item) => item.srm == srmToCompare);
+    const valueOfMap = map.find((item) => String(item.srm) === String(srmToCompare));
     if (valueOfMap) {
         return valueOfMap.hex;
     }

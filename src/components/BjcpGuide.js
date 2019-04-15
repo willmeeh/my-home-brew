@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
-import { Typography, Anchor, Layout } from 'antd';
-import BasicTypography from 'components/BasicTypography';
-import bjcpGuideData from 'data/bjcp-2015-guideliness-pt-br-guide.json';
+import { Anchor, Layout } from 'antd';
+import BasicTypography from './BasicTypography';
+import bjcpGuideData from '../data/bjcp-2015-guideliness-pt-br-guide.json';
 
 const { Link: AnchorLink } = Anchor;
 const { Content, Sider } = Layout;
@@ -16,9 +16,9 @@ class BeerStyleDescription extends Component {
     createAnchor(bjcpGuideData) {
         return bjcpGuideData.map(({ title }) => (
             <Fragment>
-                <AnchorLink 
-                    href={'#' + this.createIdFromTitle(title)} 
-                    title={title} 
+                <AnchorLink
+                    href={'#' + this.createIdFromTitle(title)}
+                    title={title}
                 />
             </Fragment>
         ));

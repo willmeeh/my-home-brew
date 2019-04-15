@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from "react-router-dom";
 import { Typography, Anchor, Layout, Card, Col, Row } from 'antd';
-import BasicTypography from 'components/BasicTypography';
 
 const { Title, Paragraph } = Typography;
 const { Link: AnchorLink } = Anchor;
@@ -17,22 +16,19 @@ class Equipments extends Component {
     createAnchor(bjcpGuideData) {
         return bjcpGuideData.map(({ title }) => (
             <Fragment>
-                <AnchorLink 
-                    href={'#' + this.createIdFromTitle(title)} 
-                    title={title} 
+                <AnchorLink
+                    href={'#' + this.createIdFromTitle(title)}
+                    title={title}
                 />
             </Fragment>
         ));
     }
     renderImage(src, description) {
-        const style = { width: 250 };
         return (
             <Fragment>
-                {/* <label>{description}:</label><br/>
-                <img style={style} src={} alt={description}/> */}
                 <Card
                     style={{ width: 240 }}
-                    cover={<img src={src} />}
+                    cover={<img alt={description} src={src} />}
                 >
                     <Meta
                         title={description}
@@ -47,38 +43,6 @@ class Equipments extends Component {
             {
                 'title': 'Kit básico para produzir cerveja',
             },
-            {
-                'title': 'Moagem dos grãos',
-            },
-            {
-                'title': 'Brassagem',
-            },
-            {
-                'title': 'Hora de aquecer',
-            },
-            {
-                'title': 'Resfriadores (ou chiller)',
-                'paragraphs': [
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                ]
-            },
-            {
-                'title': 'Toques finais',
-                'paragraphs': [
-                    'Para acabar não posso deixar de mencionar três equipamentos básicos que são essenciais na produção das cervejas',
-                    'Termômetro',
-                    'Pá cervejeira',
-                    'Fixador de tampinhas (e garrafas)',
-                    'Nem pense em começar a sua produção sem um termômetro, uma pá cervejeira para mexer a mistura e uma balança para medir a quantidade de malte e de lúpulo, ok?',
-                    'Animado para começar sua produção? Então baixe esse artigo em PDF e aprenda em qualquer lugar sobre os equipamentos necessários para produzir cerveja.',
-                ]
-            },
-
         ]
 
         return (
@@ -120,7 +84,7 @@ class Equipments extends Component {
                         <Paragraph>Esses microorganismos vivos são responsáveis por toda a magia! Alguns cervejeiros afirmam que não fazem cerveja, apenas preparam o ambiente para que a levedura trabalhe. E é mais ou menos isso o que acontece. Após todo o processo de produção, a levedura é adicionada a baldes fermentadores e vai consumir o açúcar disponível para transformar em gás carbônico e álcool. Além disso, contribuem com alguns perfis do aroma, graças aos ésteres que produzem. Abençoados funguinhos!</Paragraph>
                         <Row gutter={16}>
                             <Col span={16}>
-                                {this.renderImage('https://2.bp.blogspot.com/-uuoxxToW-o4/WRRaSRBRx2I/AAAAAAAAZVg/jV5tmaapBNUGUXvbv4p6h41JWuvYCakeQCEw/s1600/levedura.png', '')}
+                                {this.renderImage('https://2.bp.blogspot.com/-uuoxxToW-o4/WRRaSRBRx2I/AAAAAAAAZVg/jV5tmaapBNUGUXvbv4p6h41JWuvYCakeQCEw/s1600/levedura.png', 'Levedura vista através de um microscópio')}
                             </Col>
                         </Row>
                         <Paragraph>Existem dois tipos principais de leveduras: as leveduras de alta fermentação (Saccharomyces Cerevisiae) que vão produzir as <b>cervejas Ale</b> e as leveduras de baixa fermentação (Saccharomyces Calbergensis) que vão produzir as <b>cervejas Lager</b>. Existem ainda as leveduras selvagens (Brettanomyces, Saccharomyces Bayanus, Saccharomyces Cariocus entre outras) que serão responsáveis pelas <b>cervejas de fermentação espontânea</b> como as Lambic, mas em geral não são desejadas em uma produção, sendo agentes contaminantes.</Paragraph>
