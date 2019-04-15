@@ -46,7 +46,7 @@ class Equipments extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('MOAGEM')} level={3}>MOAGEM</Title>
                         <Paragraph>O objetivo da moagem é a quebra do grão visando expor o endosperma, de forma a facilitar a ação das enzimas sobre o amido contido nele. A casca, porém, deve ser mantida o mais intacta possível, pois ela será utilizada para a filtração do mosto.</Paragraph>
                         <Paragraph>Caso a moagem seja muito fina, ela pode entupir durante a lavagem e filtração. Porém, se for grossa demais dificultará a atividade enzimática, gerando uma eficiência baixa.</Paragraph>

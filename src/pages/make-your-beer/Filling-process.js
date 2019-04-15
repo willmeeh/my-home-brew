@@ -47,7 +47,7 @@ class Equipments extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('Envase')} level={3}>Envase</Title>
                         <Paragraph>Com o priming preparado e a nossa preciosa cerveja devidamente transferida para outro balde, iniciaremos agora o envase da cerveja artesanal.</Paragraph>
                         <Row gutter={16}>

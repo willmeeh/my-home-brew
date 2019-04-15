@@ -49,7 +49,7 @@ class EquipmentSanitization extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('Sanitização: Você não pode errar na sua cerveja')} level={3}>Sanitização: Você não pode errar na sua cerveja</Title>
                         <Paragraph>Existem diversas etapas importantes no processo completo de fabricação da cerveja artesanal, mas aquela etapa em que não se pode errar de jeito nenhum é a higienização, ou seja, temos que caprichar na limpeza, sanitização e esterilização, afinal um dos principais motivos de perda de produção sem dúvidas é a contaminação, que nada mais é do que o resultado de falhas na higienização.</Paragraph>
                         <Paragraph>Apesar de todo cervejeiro saber da importância da limpeza correta e minuciosa dos equipamentos e do local antes, durante e após iniciar a produção, é comum encontrar cervejeiros iniciantes que não estão muito familiarizados com os termos citados e não sabem que existe diferença entre eles. Então vamos esclarecer essa diferença.</Paragraph>

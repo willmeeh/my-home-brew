@@ -52,7 +52,7 @@ class Equipments extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('Brassagem')} level={3}>Brassagem</Title>
                         <Paragraph>Também conhecido como mostura, este processo visa a conversão do amido oriundo do malte em açúcares menores. Há ainda a quebra de proteínas e polipeptídios do malte em menores frações, resultando na qualidade da espuma da cerveja.</Paragraph>
                         <Paragraph>Este processo nada mais é do que o cozimento do malte na água e ele se dá em diversas faixas de temperatura, de acordo com o resultado desejado e os grão usados:</Paragraph>

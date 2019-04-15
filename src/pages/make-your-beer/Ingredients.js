@@ -49,7 +49,7 @@ class Equipments extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('INGREDIENTES DA CERVEJA')} level={3}>INGREDIENTES DA CERVEJA</Title>
                         <Paragraph>A cerveja é feita por quatro ingredientes básicos: água, malte, lúpulo e levedura. É claro que outros ingredientes podem ser adicionados à receita, dependendo do estilo da cerveja, mas são esses quatro ingredientes que definem a base do nosso líquido sagrado.</Paragraph>
                         <Paragraph>A água é mais de 90% da cerveja. A água utilizada no processo de produção deve ser de boa qualidade, filtrada e sem cloro, mas apesar do que alguns mitos propagam, ela não precisa vir de uma fonte nobre para que a cerveja tenha qualidade. Hoje em dia é possível filtrar e ajustar a água de acordo com a cerveja que se deseja produzir. Esqueça aquela história da água de Agudos, da fonte da Serra ou da geleira polar... Hoje em dia isso é um mito.</Paragraph>

@@ -48,7 +48,7 @@ class Equipments extends Component {
         return (
             <Fragment>
                 <Layout className="page-layout" >
-                    <Content className="page-content" style={{ padding: '5vh 20vh'}}>
+                    <Content className="page-content" style={{ padding: '2vh 10vh' }}>
                         <Title id={this.createIdFromTitle('Fermetação')} level={3}>Fermetação</Title>
                         <Paragraph>Muitos se preocupam excessivamente com a brassagem – não que não seja importante – mas acabam negligenciam o processo de fermentação. Talvez por ser um processo que não dependa de nossa intervenção, exceto pela inoculação do fermento, ou por ser realmente misterioso no começo.</Paragraph>
                         <Row gutter={16}>
