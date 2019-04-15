@@ -39,25 +39,25 @@ class MyHomeBrewMenu extends Component {
             >
                 {this.createItem('Início','/my-home-brew')}
                 {this.createItem('Estilos BJCP 2015', '/my-home-brew/bjcp-styles-2015')}
-                <SubMenu title={'Curiosidades'}>
+                {/* <SubMenu title={'Curiosidades'}>
                     {this.createItem('Diferença entre Lagers e Ales', '/my-home-brew/curiosidades/diferenca-lager-ale')}
                     {this.createItem('Tipos de copos para cada estilo', '/my-home-brew')}
-                </SubMenu>
+                </SubMenu> */}
                 <SubMenu title={'Fazendo a sua cerveja'}>
                     {this.createItem('1. Equipamentos', '/my-home-brew/make-your-beer/equipments')}
-                    {this.createItem('2. Ingredientes', '/my-home-brew')}
-                    {this.createItem('3. Moagem do malte', '/my-home-brew')}
-                    {this.createItem('4. Mosturação', '/my-home-brew')}
-                    {this.createItem('5. Sanitização dos equipamentos', '/my-home-brew')}
-                    {this.createItem('6. Fermetação', '/my-home-brew')}
-                    {this.createItem('7. Envase', '/my-home-brew')}
+                    {this.createItem('2. Ingredientes', '/my-home-brew/ingredients')}
+                    {this.createItem('3. Moagem do malte', '/my-home-brew/milling-malt')}
+                    {this.createItem('4. Mosturação', '/my-home-brew/mashing')}
+                    {this.createItem('5. Sanitização dos equipamentos', '/my-home-brew/equipment-sanitization')}
+                    {this.createItem('6. Fermetação', '/my-home-brew/fermentation')}
+                    {this.createItem('7. Envase', '/my-home-brew/filling-process')}
                 </SubMenu>
-                <SubMenu title={'Processos e cálculos cervejeiros'}>
+                {/* <SubMenu title={'Processos e cálculos cervejeiros'}>
                     {this.createItem('Priming', '/my-home-brew')}
                     {this.createItem('Cálculos da água', '/my-home-brew')}
                     {this.createItem('Temperaturas de Mosturação', '/my-home-brew')}
                     {this.createItem('Dry Hopping', '/my-home-brew')}
-                </SubMenu>
+                </SubMenu> */}
             </Menu>
         );
     }

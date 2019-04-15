@@ -4,28 +4,54 @@ import Home from 'pages/Home';
 import DiferencaEntreLagerAle from 'pages/curiosidades/DiferencaEntreLagerAle';
 import BjcpStyles2015 from 'pages/BjcpStyles2015';
 import Equipments from 'pages/make-your-beer/Equipments';
+import EquipmentSanitization from 'pages/make-your-beer/Equipment-sanitization';
+import Fermentation from 'pages/make-your-beer/Fermentation';
+import FillingProcess from 'pages/make-your-beer/Filling-process';
+import Ingredients from 'pages/make-your-beer/Ingredients';
+import Mashing from 'pages/make-your-beer/Mashing';
+import MillingMalt from 'pages/make-your-beer/Milling-malt';
 
 export const ROUTES = [
   { path: '/my-home-brew', name: 'Início', component: Home },
   { 
     path: '/my-home-brew/curiosidades/diferenca-lager-ale', 
-    name: 'Início', 
     component: DiferencaEntreLagerAle 
   },
   { 
     path: '/my-home-brew/curiosidades/diferenca-lager-ale', 
-    name: 'Diferença entre Lagers e Ales', 
     component: DiferencaEntreLagerAle
   },
   { 
     path: '/my-home-brew/bjcp-styles-2015', 
-    name: 'Estilos BJCP 2015', 
     component: BjcpStyles2015 
   },
   { 
     path: '/my-home-brew/make-your-beer/equipments', 
-    name: 'Equipamentos', 
     component: Equipments 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/ingredients', 
+    component: Ingredients
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/milling-malt', 
+    component: MillingMalt 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/mashing', 
+    component: Mashing 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/equipment-sanitization', 
+    component: EquipmentSanitization 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/fermentation', 
+    component: Fermentation 
+  },
+  { 
+    path: '/my-home-brew/make-your-beer/filling-process', 
+    component: FillingProcess 
   },
 ];
 

@@ -58,25 +58,9 @@ class Equipments extends Component {
             },
             {
                 'title': 'Resfriadores (ou chiller)',
-                'paragraphs': [
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
-                ]
             },
             {
                 'title': 'Toques finais',
-                'paragraphs': [
-                    'Para acabar não posso deixar de mencionar três equipamentos básicos que são essenciais na produção das cervejas',
-                    'Termômetro',
-                    'Pá cervejeira',
-                    'Fixador de tampinhas (e garrafas)',
-                    'Nem pense em começar a sua produção sem um termômetro, uma pá cervejeira para mexer a mistura e uma balança para medir a quantidade de malte e de lúpulo, ok?',
-                    'Animado para começar sua produção? Então baixe esse artigo em PDF e aprenda em qualquer lugar sobre os equipamentos necessários para produzir cerveja.',
-                ]
             },
 
         ]
@@ -85,11 +69,11 @@ class Equipments extends Component {
             <Fragment>
                 <Layout className="page-layout" >
                     <Content className="page-content" style={{ padding: '5vh 20vh'}}>
-                        <Title id={1} level={3}>Kit básico para produzir cerveja</Title>
+                        <Title id={this.createIdFromTitle('Kit básico para produzir cerveja')} level={3}>Kit básico para produzir cerveja</Title>
                         <Paragraph>Uma dúvida normal que todos nós cervejeiros caseiros enfrentamos no início é: “quais são os equipamentos necessários que eu preciso ter para começar a fazer cerveja em casa”?</Paragraph>
                         <Paragraph>Hoje no mercado existem muitos kits de produção prontos, ou seja, com todos os equipamentos prontinhos para você ir lá e fazer o que deseja. Porém, esses kits são bem diversos e para o cervejeiro que está começando, muitas vezes, esses equipamentos fornecem alguns utensílios que não precisaremos no início e outros que seriam mais importantes, não vem nos kits.</Paragraph>
                         
-                        <Title level={3}>Moagem dos grãos</Title>
+                        <Title id={this.createIdFromTitle('Moagem dos grãos')} level={3}>Moagem dos grãos</Title>
                         <Paragraph>Para dar início a nossa produção e entender quais os melhores equipamentos que devemos comprar, vale a pena entender também dos processos de fabricação. Quanto maior entendimento de como fazer cerveja em casa, melhor.</Paragraph>
                         <Paragraph>Você pode ter a opção de querer ou não moer os grãos, isso claro, se você usar o método “all grain”, ou seja, utilizar em sua produção uma cerveja feita 100% grãos.</Paragraph>
                         <Paragraph>Em cerveja tudo depende mesmo, então, se você parte do princípio que irá produzir a sua cerveja em casa por esse método, pode escolher a opção de comprar os maltes já moídos ou moer em casa.</Paragraph>
@@ -106,7 +90,7 @@ class Equipments extends Component {
                             </Col>
                         </Row>
 
-                        <Title level={3}>Brassagem</Title>
+                        <Title id={this.createIdFromTitle('Brassagem')} level={3}>Brassagem</Title>
                         <Paragraph>Para a brassagem, que é o processo no qual os grãos de malte são cozidos para liberação das enzimas que vão converter o amido em açúcar é preciso ter em mão:</Paragraph>
                         <Paragraph>Um caldeirão grande, partindo do princípio que você usará o Método BIAB (Brew in a Bag), fazendo cerveja com uma única panela. O caldeirão será utilizado para você fazer o aquecimento da água e dos grãos, além da fervura.</Paragraph>
                         <Row gutter={16}>
@@ -130,7 +114,7 @@ class Equipments extends Component {
                             </Col>
                         </Row>
 
-                        <Title level={3}>Resfriadores (ou chiller)</Title>
+                        <Title id={this.createIdFromTitle('Resfriadores (ou chiller)')} level={3}>Resfriadores (ou chiller)</Title>
                         <Paragraph>Uma das etapas mais importantes é o resfriamento do mosto. Ele tem que ser feito com rapidez, por isso é importante adquirir um artefato para resfriar o líquido.</Paragraph>
                         <Paragraph>Podem ser usadas as serpentinas de cobre ligadas a uma torneira. O metal troca de calor com a mistura e é resfriado pela água que passa por dentro dele, esfriando gradualmente a mistura.</Paragraph>
                         <Row gutter={16}>
@@ -150,7 +134,7 @@ class Equipments extends Component {
                         <Paragraph>Lembre-se, que nesta etapa é fundamental você ficar atento a sanitização!</Paragraph>
                         <Paragraph>O Bag, ou o saco de grãos, será necessário para que você, após finalizar a conversão de todo o amido em açúcar, retirar os grãos e deixar o mosto (caldo açucarado) na panela.</Paragraph>
 
-                        <Title level={3}>Toques finais</Title>
+                        <Title id={this.createIdFromTitle('Toques finais')} level={3}>Toques finais</Title>
                         <Paragraph>Para acabar não posso deixar de mencionar três equipamentos básicos que são essenciais na produção das cervejas</Paragraph>
                         <Row gutter={16}>
                             <Col span={8}>
@@ -164,6 +148,8 @@ class Equipments extends Component {
                             </Col>
                         </Row>
                         <Paragraph>Nem pense em começar a sua produção sem um termômetro, uma pá cervejeira para mexer a mistura e uma balança para medir a quantidade de malte e de lúpulo, ok?</Paragraph>
+                        Texto Retirado de: https://www.hominilupulo.com.br/universo-da-cerveja/equipamentos-fazer-cerveja/
+                        Images Retiradas do google images
                     </Content>
                     <Sider width={256} className="page-sider">
                         <Anchor offsetTop={64}>
