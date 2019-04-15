@@ -20,7 +20,7 @@ class Home extends Component {
                 <Row>
                     <Col md={24}>
                         <SublimeVideo autoPlay loop
-                            src="http://localhost:3000/ceva.mp4"
+                            src="https://willmeeh.github.io/my-home-brew/ceva.mp4"
                         />
                     </Col>
                 </Row>
