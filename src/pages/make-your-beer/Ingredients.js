@@ -14,8 +14,8 @@ class Equipments extends Component {
     }
 
     createAnchor(bjcpGuideData) {
-        return bjcpGuideData.map(({ title }) => (
-            <Fragment>
+        return bjcpGuideData.map(({ title }, index) => (
+            <Fragment key={'anchor' + index}>
                 <AnchorLink
                     href={'#' + this.createIdFromTitle(title)}
                     title={title}
@@ -33,27 +33,28 @@ class Equipments extends Component {
                     <Meta
                         title={description}
                         />
-                </Card>,
+                </Card>
             </Fragment>
         );
     }
 
     render() {
         const texts = [
-            {
-                'title': 'Kit básico para produzir cerveja',
-            },
+            { 'title': 'INGREDIENTES DA CERVEJA' },
+            { 'title': 'MALTE' },
+            { 'title': 'LÚPULO' },
+            { 'title': 'LEVEDURA' },
         ]
 
         return (
             <Fragment>
                 <Layout className="page-layout" >
                     <Content className="page-content" style={{ padding: '5vh 20vh'}}>
-                        <Title id={1} level={3}>INGREDIENTES DA CERVEJA</Title>
+                        <Title id={this.createIdFromTitle('INGREDIENTES DA CERVEJA')} level={3}>INGREDIENTES DA CERVEJA</Title>
                         <Paragraph>A cerveja é feita por quatro ingredientes básicos: água, malte, lúpulo e levedura. É claro que outros ingredientes podem ser adicionados à receita, dependendo do estilo da cerveja, mas são esses quatro ingredientes que definem a base do nosso líquido sagrado.</Paragraph>
                         <Paragraph>A água é mais de 90% da cerveja. A água utilizada no processo de produção deve ser de boa qualidade, filtrada e sem cloro, mas apesar do que alguns mitos propagam, ela não precisa vir de uma fonte nobre para que a cerveja tenha qualidade. Hoje em dia é possível filtrar e ajustar a água de acordo com a cerveja que se deseja produzir. Esqueça aquela história da água de Agudos, da fonte da Serra ou da geleira polar... Hoje em dia isso é um mito.</Paragraph>
                         <Paragraph>Para as produções caseiras, a água não é a maior das preocupações. É claro que é preciso buscar uma água filtrada, sem cloro e também com um Ph possível para a produção - por aqui procuramos ir em busca de uma água com o ph entre 5,2 e 5,5. Para a produção de alguns estilos, enriquecer a água com sais pode ajudar a chegar em um resultado mais alinhado com os guias de estilos. Mas isso já um papo mais avançado para quando entrarmos em detalhes sobre cada ingrediente.</Paragraph>
-                        <Title id={1} level={3}>MALTE</Title>
+                        <Title id={this.createIdFromTitle('MALTE')} level={3}>MALTE</Title>
                         O malte é o grão de cevada que passou por um processo controlado de umidificação, germinou e teve esse etapa interrompida por secagem. Isso é necessário para que o grão transforme o amido em seu interior, produza e ative as enzimas necessárias para produzir cerveja. Além disso, o malte seco é mais estável e favorece o armazenamento.
                         <Row gutter={16}>
                             <Col span={16}>
@@ -62,10 +63,10 @@ class Equipments extends Component {
                         </Row>
                         <Paragraph>Durante o processo de torra do grão serão definidos os aromas e sabores do malte. O malte vai dar cor, corpo, aroma e sabor à cerveja, além do alimento necessário para que a levedura trabalhe e produza o gás e álcool da cerveja. Chocolate, café, defumado, biscoito, caramelo, pão branco... Há uma infinidade de nuances sensoriais que o malte pode oferecer tanto ao aroma quanto ao paladar.</Paragraph>
                         <Paragraph>Dependendo do estilo, a cerveja pode levar também maltes de outros grãos como trigo, centeio e aveia. Além do malte, adjuntos não-malteados podem ser utilizados como arroz, milho, cevada torrada, flocos de aveia... Tudo vai depender da receita escolhida para a sua cerveja!</Paragraph>
-                        <Title id={1} level={4}><i>Por que cevada?</i></Title>
+                        <Title id='por-que-cevada' level={4}><i>Por que cevada?</i></Title>
                         <Paragraph>A cevada é um grão riquíssimo em amido e enzimas que favorecem a produção da cerveja. Ela possui baixo teor de gordura, uma boa relação de proteínas e suas cascas funcionam como escudos durante o processo de mostura e são filtrantes naturais - formam uma verdadeira "caminha" na panela que ajuda na filtragem do mosto.</Paragraph>
 
-                        <Title id={1} level={3}>LÚPULO</Title>
+                        <Title id={this.createIdFromTitle('LÚPULO')} level={3}>LÚPULO</Title>
                         <Paragraph>A alma da cerveja. Essa plantinha é responsável pelo aroma e amargor da cerveja. O lúpulo é uma planta trepadeira que pode chegar a 8 metros de altura. Seu nome científico é Humulus Lupulus e apenas as flores femininas da planta podem ser utilizadas na produção de cerveja - elas são ricas em lupulina, uma substância resinosa essencial para os aromas e amargor da cerveja.</Paragraph>
                         <Row gutter={16}>
                             <Col span={16}>
@@ -80,7 +81,7 @@ class Equipments extends Component {
                         <Title id={1} level={4}><i>Dry Hopping</i></Title>
                         <Paragraph>O lúpulo pode ser adicionado em alguns processos frios de produção de cerveja em uma espécie de hop bag - semelhante a uma infusão de chá. Isso favorece a liberação de óleos essenciais que potencializa os aromas da cerveja.</Paragraph>
 
-                        <Title id={1} level={3}>LEVEDURA</Title>
+                        <Title id={this.createIdFromTitle('LEVEDURA')} level={3}>LEVEDURA</Title>
                         <Paragraph>Esses microorganismos vivos são responsáveis por toda a magia! Alguns cervejeiros afirmam que não fazem cerveja, apenas preparam o ambiente para que a levedura trabalhe. E é mais ou menos isso o que acontece. Após todo o processo de produção, a levedura é adicionada a baldes fermentadores e vai consumir o açúcar disponível para transformar em gás carbônico e álcool. Além disso, contribuem com alguns perfis do aroma, graças aos ésteres que produzem. Abençoados funguinhos!</Paragraph>
                         <Row gutter={16}>
                             <Col span={16}>

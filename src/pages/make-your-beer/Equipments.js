@@ -33,7 +33,7 @@ class Equipments extends Component {
                     <Meta
                         title={description}
                         />
-                </Card>,
+                </Card>
             </Fragment>
         );
     }

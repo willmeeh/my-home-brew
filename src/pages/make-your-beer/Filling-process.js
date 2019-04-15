@@ -14,8 +14,8 @@ class Equipments extends Component {
     }
 
     createAnchor(bjcpGuideData) {
-        return bjcpGuideData.map(({ title }) => (
-            <Fragment>
+        return bjcpGuideData.map(({ title }, index) => (
+            <Fragment key={'anchor' + index}>
                 <AnchorLink
                     href={'#' + this.createIdFromTitle(title)}
                     title={title}
@@ -33,23 +33,22 @@ class Equipments extends Component {
                     <Meta
                         title={description}
                         />
-                </Card>,
+                </Card>
             </Fragment>
         );
     }
 
     render() {
         const texts = [
-            {
-                'title': 'Kit básico para produzir cerveja',
-            }
+            { 'title': 'Envase' },
+            { 'title': 'Armazenamento das garrafas' }
         ]
 
         return (
             <Fragment>
                 <Layout className="page-layout" >
                     <Content className="page-content" style={{ padding: '5vh 20vh'}}>
-                        <Title id={1} level={3}>Envase</Title>
+                        <Title id={this.createIdFromTitle('Envase')} level={3}>Envase</Title>
                         <Paragraph>Com o priming preparado e a nossa preciosa cerveja devidamente transferida para outro balde, iniciaremos agora o envase da cerveja artesanal.</Paragraph>
                         <Row gutter={16}>
                             <Col span={16}>
@@ -62,7 +61,7 @@ class Equipments extends Component {
                         <Paragraph>Em seguida, coloque a tampinha devidamente sanitizada sobre a garrafa e, com auxílio do colocador de tampinhas, lacre-a bem.</Paragraph>
                         <Paragraph>Para a sanitização da tampinha, antes de colocá-la na garrafa borrife um pouco de álcool 70% sobre ela e em seguida sacuda um pouco para tirar o excesso.</Paragraph>
 
-                        <Title id={1} level={4}>Armazenamento das garrafas durante a refermentação</Title>
+                        <Title id={this.createIdFromTitle('Armazenamento das garrafas')} level={4}>Armazenamento das garrafas durante a refermentação</Title>
                         <Paragraph>Após o envase, armazene suas garrafas em pé num ambiente fresco e sem luz, a uma temperatura próxima ao limite da de fermentação, por um período de aproximadamente 15 dias.</Paragraph>
                         <Paragraph>Lembrando que dependendo do estilo e do tempo de maturação, o período de carbonatação pode variar um pouco, pois a refermentação seguirá as mesmas fases da fermentação mas num período um pouco menor.</Paragraph>
                         <Paragraph>Caso esteja muito ansioso para ver seus resultados você poderá experimentar uma garrafa teste semana após o envase, porém é bem provável que a refermentação ainda não esteja completa.</Paragraph>

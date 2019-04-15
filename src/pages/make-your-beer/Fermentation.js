@@ -14,8 +14,8 @@ class Equipments extends Component {
     }
 
     createAnchor(bjcpGuideData) {
-        return bjcpGuideData.map(({ title }) => (
-            <Fragment>
+        return bjcpGuideData.map(({ title }, index) => (
+            <Fragment key={'anchor' + index}>
                 <AnchorLink
                     href={'#' + this.createIdFromTitle(title)}
                     title={title}
@@ -33,23 +33,23 @@ class Equipments extends Component {
                     <Meta
                         title={description}
                         />
-                </Card>,
+                </Card>
             </Fragment>
         );
     }
 
     render() {
         const texts = [
-            {
-                'title': 'Kit básico para produzir cerveja',
-            }
+            { 'title': 'Fermetação' },
+            { 'title': 'O que leva a uma boa fermentação?' },
+            { 'title': 'As fases da fermentação' }
         ]
 
         return (
             <Fragment>
                 <Layout className="page-layout" >
                     <Content className="page-content" style={{ padding: '5vh 20vh'}}>
-                        <Title id={1} level={3}>Fermetação</Title>
+                        <Title id={this.createIdFromTitle('Fermetação')} level={3}>Fermetação</Title>
                         <Paragraph>Muitos se preocupam excessivamente com a brassagem – não que não seja importante – mas acabam negligenciam o processo de fermentação. Talvez por ser um processo que não dependa de nossa intervenção, exceto pela inoculação do fermento, ou por ser realmente misterioso no começo.</Paragraph>
                         <Row gutter={16}>
                             <Col span={16}>
@@ -59,7 +59,7 @@ class Equipments extends Component {
                         <Paragraph>A fermentação tem um papel essencial na produção da cerveja artesanal, pois é nesta etapa que as leveduras transformam o líquido adocicado que produzimos na tão desejada cerveja. E aprender como tudo isso funciona é de extrema importância para a produção de ótimas cervejas.</Paragraph>
                         <Paragraph>Durante a fermentação, as leveduras irão consumir os açúcares fermentáveis do mosto gerando o álcool e o CO2, os aromas e sabores, e também a redução o pH da cerveja.</Paragraph>
                         <Paragraph>O tempo e a temperatura de fermentação podem variar de acordo com a densidade inicial do mosto, o tipo de levedura utilizado e as características que você busca na cerveja.</Paragraph>
-                        <Title id={1} level={3}>O que leva a uma boa fermentação?</Title>
+                        <Title id={this.createIdFromTitle('O que leva a uma boa fermentação?')} level={3}>O que leva a uma boa fermentação?</Title>
                         <Paragraph>
                             Basicamente três fatores são determinantes para uma boa fermentação:<br/>
                             <ul>
@@ -77,7 +77,7 @@ class Equipments extends Component {
                         <Paragraph>A inoculação do fermento em temperaturas altas, acima de 25C, acelera a produção de diacetil tornando difícil sua absorção pelas leveduras no final da fermentação.</Paragraph>
                         <Paragraph>Vale ressaltar que durante a fermentação primária a temperatura dentro do fermentador será maior que a temperatura externa devido à fermentação também ser um processo exotérmico. Assim, investir numa geladeira – pode ser uma velhinha mesmo – e em um termostato é tão importante quanto investir em bons insumos.</Paragraph>
 
-                        <Title id={1} level={3}>As fases da fermentação</Title>
+                        <Title id={this.createIdFromTitle('As fases da fermentação')} level={3}>As fases da fermentação</Title>
                         <Paragraph>Uma vez que a fermentação é um processo um tanto quanto complicado, é importante conhecê-la para dominá-la. Se realmente fosse simplesmente como resumimos, conversão de açúcares em álcool e CO2,poderíamos abrir uma cerveja agora e relaxar. Mas, como não se resume apenas a esta parte, acho melhor você abrir uma breja e ler mais um pouco…</Paragraph>
                         <Paragraph>Basicamente a fermentação se completa com a conclusão de três fases: Adaptativa (I), Crescimento (II) e Estacionária (III). A levedura precisa terminar a primeira fase para passar para a segunda, mas não precisa terminar a segunda para começar a terceira, percorrendo as fases II e III concomitantemente.</Paragraph>
 

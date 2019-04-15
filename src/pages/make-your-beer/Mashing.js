@@ -14,8 +14,8 @@ class Equipments extends Component {
     }
 
     createAnchor(bjcpGuideData) {
-        return bjcpGuideData.map(({ title }) => (
-            <Fragment>
+        return bjcpGuideData.map(({ title }, index) => (
+            <Fragment key={'anchor' + index}>
                 <AnchorLink
                     href={'#' + this.createIdFromTitle(title)}
                     title={title}
@@ -33,23 +33,27 @@ class Equipments extends Component {
                     <Meta
                         title={description}
                         />
-                </Card>,
+                </Card>
             </Fragment>
         );
     }
 
     render() {
         const texts = [
-            {
-                'title': 'Kit básico para produzir cerveja',
-            },
+            { 'title': 'Brassagem' },
+            { 'title': 'Inativação das enzimas' },
+            { 'title': 'Lavagem, filtragem e clarificação' },
+            { 'title': 'Fervura e lupulagem' },
+            { 'title': 'Medição da densidade' },
+            { 'title': 'Decantação e resfriamento' },
+            { 'title': 'Trasfega' },
         ]
 
         return (
             <Fragment>
                 <Layout className="page-layout" >
                     <Content className="page-content" style={{ padding: '5vh 20vh'}}>
-                        <Title id={1} level={3}>Brassagem</Title>
+                        <Title id={this.createIdFromTitle('Brassagem')} level={3}>Brassagem</Title>
                         <Paragraph>Também conhecido como mostura, este processo visa a conversão do amido oriundo do malte em açúcares menores. Há ainda a quebra de proteínas e polipeptídios do malte em menores frações, resultando na qualidade da espuma da cerveja.</Paragraph>
                         <Paragraph>Este processo nada mais é do que o cozimento do malte na água e ele se dá em diversas faixas de temperatura, de acordo com o resultado desejado e os grão usados:</Paragraph>
                         <Title id={1} level={4}>Repouso protéico (50-55ºC)</Title>
@@ -66,20 +70,20 @@ class Equipments extends Component {
                                 <li><b>Alfa-amilase (68-72ºC):</b> Aqui há a produção de mais açúcares maiores. Assim, ao usar mais as alfa-amilases, teremos um mosto com maior diversidade de açúcares, muitos não fermentáveis. O resultado é uma cerveja mais doce, mais encorpada e menos alcoólica, pela não fermentação de mais açúcares.</li>
                             </ul>
                         </Paragraph>
-                        <Title id={1} level={3}>Inativação das enzimas (75-79ºC) – Mash Out</Title>
+                        <Title id={this.createIdFromTitle('Inativação das enzimas')} level={3}>Inativação das enzimas (75-79ºC) – Mash Out</Title>
                         <Paragraph>Essa é a fase final da mostura, que tem com o objetivo a parada da atuação enzimática, principalmente. Aqui deve- se ter muito cuidado para que a temperatura da cerveja não ultrapasse os 80 graus, pois assim haverá grande extração de polifenóis, gerando adstringência no sabor final da cerveja.</Paragraph>
                         <Paragraph>Deve-se ter atenção pois sempre que o fogo estiver ligado o mosto deve ser agitado para que os grãos do fundo da panela não queimem.</Paragraph>
                         <Paragraph>O tempo também deverá ser levado em consideração. Quanto melhor o controle de temperatura, menor ele pode ser. Da mesma forma, um mosto mais denso e rico em açucares requer um período maior para a conversão.</Paragraph>
                         <Paragraph>Em média, um tempo utilizado para a brassagem de cerveja caseira é pode variar entre 60-90 minutos.</Paragraph>
 
-                        <Title id={1} level={3}>Lavagem, filtragem e clarificação do mosto.</Title>
+                        <Title id={this.createIdFromTitle('Lavagem, filtragem e clarificação')} level={3}>Lavagem, filtragem e clarificação do mosto.</Title>
                         <Paragraph>O objetivo desta etapa é separar o grão do mosto. Após este processo, os grãos serão descartados.</Paragraph>
                         <Paragraph>O grão, aqui, tem a importante função de atuar como elemento filtrante, impedindo que se leve sedimentos para a fervura, gerando um mosto mais clarificado. É nesta etapa que se utilizará o fundo falso.</Paragraph>
                         <Paragraph>Após o término da brassagem e adequação do equipamento, deve esperar 15 minutos para os grãos de depositarem no fundo e filtrarem melhor.</Paragraph>
                         <Paragraph>Após este tempo, pela torneira o mosto começará a ser retirado, sendo devolvido para a panela até que ele comece a sair sem partículas sólidas. Após isto, ele começará a ser retirado da panela e sendo adicionado a água da lavagem. Esta água irá retirar mais açúcares dos grãos, dando um melhor rendimento.</Paragraph>
                         <Paragraph>Para uma melhor precisão, o ideal é medir a densidade do mosto agora, assim você terá um controle melhor da sua produção. Use o densímetro ou o refratômetro para fazer a medição.</Paragraph>
 
-                        <Title id={1} level={3}>Fervura e lupulagem</Title>
+                        <Title id={this.createIdFromTitle('Fervura e lupulagem')} level={3}>Fervura e lupulagem</Title>
                         <Paragraph>A fervura do mosto tem algumas funções importantes na produção cervejeira, entre elas: esterilização do mosto, concentração do mosto e evaporação de substâncias indesejadas.</Paragraph>
                         <Paragraph>Assim que o mosto ferver, é importante que a panela esteja destampada para a eliminação de substâncias que podem causar sabores e aromas ruins à cerveja, também conhecidos como off-flavours.</Paragraph>
                         <Paragraph>Um desses exemplos é o DMS – Dimetilsulfeto, um composto sulfuroso, que deve evaporar durante a fervura, para que a sua cerveja não fique com aroma de milho cozido ou vegetais cozidos. Está aí a importância de deixar a panela aberta, sem a tampa, durante a fervura!</Paragraph>
@@ -93,7 +97,7 @@ class Equipments extends Component {
                         <Paragraph>Já para o aroma, os lúpulos devem ser adicionados ao final da fervura, normalmente após os últimos 15 minutos finais. Quanto menor a fervura dos lúpulos, menos sua volatização e maior aroma na cerveja.</Paragraph>
                         <Paragraph>O tempo de fervura deverá ser escolhido considerando fatores como evaporação desejada e caramelização do mosto. Uma fervura muito longa irá gerar um sabor mais caramelado, que pode não ser interessante para determinados estilos.</Paragraph>
 
-                        <Title id={1} level={3}>Medição da densidade</Title>
+                        <Title id={this.createIdFromTitle('Medição da densidade')} level={3}>Medição da densidade</Title>
                         <Paragraph>Esta nesta etapa que descobriremos se nosso processo foi eficiente. Quanto mais açúcares tiverem sido quebrados e extraídos, mais denso será o mosto, logo, melhor terá sido o resultado.</Paragraph>
                         <Paragraph>Para poder fazer alguma correção ao longo do processo, é comum também medir a densidade logo após o fim da brassagem, porém a densidade que será considerada como oficial será a medida após a fervura.</Paragraph>
                         <Row gutter={16}>
@@ -102,14 +106,14 @@ class Equipments extends Component {
                             </Col>
                         </Row>
 
-                        <Title id={1} level={3}>Decantação e resfriamento do mosto</Title>
+                        <Title id={this.createIdFromTitle('Decantação e resfriamento')} level={3}>Decantação e resfriamento do mosto</Title>
                         <Paragraph>Após terminar a fervura, o mosto deve ser resfriado o mais breve possível para a temperatura de inoculação do fermento, de acordo com o tipo de fermento usado.</Paragraph>
                         <Paragraph>Neste momento, também é importante que as partículas sólidas decantem. Para isso, faz-se movimentos circulares com a colher, gerando um roda moinho</Paragraph>
                         <Paragraph>Este processo é conhecido como whirlpool. Feito isso, inicia-se o resfriamento.</Paragraph>
                         <Paragraph>Utilizando o chiller, a água trocará temperatura com o mosto. Neste momento, é importante ter muito cuidado para evitar contaminação, cada vez mais possível de acontecer com a diminuição da temperatura.</Paragraph>
                         <Paragraph>Este processo de resfriamento rápido é importante para coagulação de proteínas e polifenóis.</Paragraph>
 
-                        <Title id={1} level={3}>Trasfega para o fermentador</Title>
+                        <Title id={this.createIdFromTitle('Trasfega')} level={3}>Trasfega para o fermentador</Title>
                         <Paragraph>Após atingir a temperatura indicada para o fermento, o mosto deve ser transferido para o balde fermentador.</Paragraph>
                         <Paragraph>Neste momento, é importante oxigenar o mosto, pois o oxigênio será necessário durante a fermentação. Assim, a própria ação da gravidade gera isto com a queda do mosto da panela para o fermentador.</Paragraph>
                         <Paragraph>O oxigênio é importante para multiplicação celular da levedura.</Paragraph>
